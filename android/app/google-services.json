@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "711282520658",
+    "firebase_url": "https://investflutter.firebaseio.com",
+    "project_id": "investflutter",
+    "storage_bucket": "investflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711282520658:android:95c1fb03d160b2a1b7658b",
+        "android_client_info": {
+          "package_name": "com.example.investing_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711282520658-v1j9ltpdqovcn9obpe40nglk02hculuo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYdIvy5sdbQOtK4DYgLbfUXF9Kot-t17w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711282520658-v1j9ltpdqovcn9obpe40nglk02hculuo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
