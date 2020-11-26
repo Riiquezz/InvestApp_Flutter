@@ -1,4 +1,4 @@
-import 'package:investing_app/utils/constants.dart';
+import 'package:InvestFlutter/utils/constants.dart';
 
 class ListItemModel {
   final String title;

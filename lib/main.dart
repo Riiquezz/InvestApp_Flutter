@@ -1,7 +1,5 @@
+import 'package:InvestFlutter/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:investing_app/pages/home_page.dart';
-import 'package:investing_app/pages/login.dart';
-import 'package:investing_app/utils/constants.dart';
 
 import './pages/login.dart';
 import './utils/location.dart';
@@ -50,7 +48,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final _auth = FirebaseAuth.instance;
   final _cloudStorage = FirebaseFirestore.instance;
-  final dateFormat = DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br');
+  final dateFormat = DateFormat(DateFormat.YEAR_MONTH_DAY);
 
   bool showProgress = false;
 
@@ -69,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
     getStateAndCityData();
 
     super.initState();
-    initializeDateFormatting('pt_BR', null);
   }
 
   void getStateAndCityData() async {
@@ -87,12 +84,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    initializeDateFormatting('pt_BR', null);
     return ModalProgressHUD(
       inAsyncCall: showProgress,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: SafeArea(
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [Colors.white, Colors.grey[900]])),
           child: Center(
             child: Padding(
               padding: EdgeInsets.all(8.0),
@@ -100,10 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image(
-                      image: AssetImage('assets/EscritaQPasa.png'),
-                      width: 200.0,
-                    ),
                     SizedBox(
                       height: 20.0,
                     ),
@@ -300,7 +297,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HomePage(),
+                                  builder: (context) => MyLoginPage(),
                                 ),
                               );
 
@@ -327,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 20.0,
-                              color: Colors.white,
+                              color: SECONDARY_DARK,
                             ),
                           ),
                         ),
@@ -344,11 +341,25 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => MyLoginPage()),
                         );
                       },
-                      child: Text(
-                        "Já é cadastrado? Ir para o login.",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.w700,
+                      child: Container(
+                        width: 400,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: SECONDARY_DARK),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Já é cadastrado?\n  Ir para o Login!",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

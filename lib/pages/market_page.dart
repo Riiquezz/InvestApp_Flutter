@@ -1,8 +1,9 @@
+import 'package:InvestFlutter/models/list_item_model.dart';
+import 'package:InvestFlutter/utils/constants.dart';
+import 'package:InvestFlutter/utils/widget_utils.dart';
+import 'package:InvestFlutter/widgets/list_item_card.dart';
 import 'package:flutter/material.dart';
-import 'package:investing_app/models/list_item_model.dart';
-import 'package:investing_app/utils/constants.dart';
-import 'package:investing_app/utils/widget_utils.dart';
-import 'package:investing_app/widgets/list_item_card.dart';
+
 
 class MarketPage extends StatelessWidget {
   final List<ListItemModel> _items = [

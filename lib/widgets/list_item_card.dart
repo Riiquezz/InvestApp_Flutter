@@ -1,5 +1,6 @@
+import 'package:InvestFlutter/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:investing_app/utils/constants.dart';
+
 
 class ListItemCard extends StatelessWidget {
   final String title;
